@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inspect reproducible, outcome-based evaluations for a synthetic support agent.">
+  <title>Agent Reliability Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#top" aria-label="Agent Reliability Lab home"><span class="brandmark">a<span>↗</span></span><span>AGENT<br><b>RELIABILITY LAB</b></span></a>
+    <div class="workspace"><span class="workspace-icon">R</span><div>Refund agent<span>Evaluation workspace</span></div><span class="workspace-dot"></span></div>
+    <p class="nav-caption">WORKSPACE</p>
+    <a class="nav-item active" href="#top"><span>◫</span> Experiment overview <span class="nav-arrow">↗</span></a>
+    <a class="nav-item" href="#scenario-section"><span>▤</span> Scenario explorer</a>
+    <a class="nav-item" href="#methodology"><span>⌘</span> Evaluation design</a>
+    <div class="sidebar-note"><span class="status-dot"></span> ISOLATED SANDBOX<p>Synthetic orders.<br>Simulated refunds.<br>Real assertions.</p></div>
+    <div class="sidebar-footer">PYTHON + SQLITE + PYTEST<span>v0.1.0 · Local evaluation</span></div>
+  </aside>
+  <main id="top">
+    <header class="topbar"><span>Workspace <span class="slash">/</span> Refund agent <span class="slash">/</span> <b>Overview</b></span><span class="mode-pill"><span class="status-dot"></span> OFFLINE REFERENCE</span></header>
+    <section class="page-heading"><div><div class="eyebrow">EVIDENCE OVER ASSUMPTIONS</div><h1>Trust the outcome.</h1><p>Verify what your agent did. Not just what it said.</p></div><button class="primary" id="run-button">↻ <span>Run experiment</span></button></section>
+    <div id="error" class="error-banner" role="alert" hidden></div>
+    <section class="experiment-strip"><span class="strip-label">EXPERIMENT 001</span><span>Customer support / Full-order refunds</span><span class="strip-meta" id="suite-label">Loading scenarios…</span></section>
+    <section class="metric-grid" aria-label="Experiment metrics">
+      <article class="metric"><span class="metric-label">REFERENCE SCENARIOS</span><div class="metric-value"><span id="baseline-count">—</span><span class="metric-suffix" id="baseline-total"></span></div><span class="metric-caption">Baseline outcome checks</span><div class="mini-line"></div></article>
+      <article class="metric"><span class="metric-label">SEEDED DEFECTS CAUGHT</span><div class="metric-value"><span id="fault-count">—</span><span class="metric-suffix" id="fault-total"></span></div><span class="metric-caption">Controlled fault experiments</span><div class="fault-dots" id="fault-dots"></div></article>
+      <article class="metric"><span class="metric-label">ASSERTIONS / SCENARIO</span><div class="metric-value" id="checks-count">—</div><span class="metric-caption">State, claims, access & execution</span><div class="metric-tag">INDEPENDENT EXPECTATIONS</div></article>
+      <article class="metric"><span class="metric-label">EVALUATION MODE</span><div class="metric-text">Deterministic</div><span class="metric-caption">No model calls · No API keys</span><div class="metric-tag neutral">HARNESS VALIDATION ONLY</div></article>
+    </section>
+    <section class="experiment-grid">
+      <article class="panel fault-panel"><div class="panel-heading"><div><span class="eyebrow">BREAK IT ON PURPOSE</span><h2>Fault injection</h2></div><span class="small-label">Select a variant</span></div><div id="fault-list" class="fault-list"></div></article>
+      <article class="panel coverage-panel"><div class="panel-heading"><div><span class="eyebrow">CURRENT VARIANT</span><h2>Quality dimensions</h2></div><span id="variant-score" class="score-badge"></span></div><div id="category-bars" class="category-bars"></div><p class="panel-footnote">Passing scenarios by dimension. Injected defects are expected to expose failures.</p></article>
+    </section>
+    <section id="scenario-section" class="panel scenario-panel"><div class="panel-heading"><div><span class="eyebrow">FOLLOW THE EVIDENCE</span><h2>Scenario explorer</h2></div><div class="table-controls"><label class="search-label"><span class="sr-only">Search scenarios</span><input id="search" type="search" placeholder="Search scenarios…"></label><button class="filter-button" id="failed-only" aria-pressed="false">Failures only</button></div></div>
+      <div class="explorer"><div class="scenario-table-wrap"><table><thead><tr><th scope="col">SCENARIO</th><th scope="col">DIMENSION</th><th scope="col">RESULT</th></tr></thead><tbody id="scenario-table"></tbody></table><p id="empty-state" class="empty-state" hidden>No scenarios match this filter.</p></div><aside class="detail-panel" aria-label="Selected scenario evidence"><div class="detail-kicker">CASE INSPECTOR <span id="case-number"></span></div><h3 id="case-title">Select a scenario</h3><p id="case-message"></p><div class="detail-tabs" role="tablist" aria-label="Evidence view"><button role="tab" aria-selected="true" id="checks-tab" data-view="checks">Assertions</button><button role="tab" aria-selected="false" id="trace-tab" data-view="trace">Tool trace</button><button role="tab" aria-selected="false" id="state-tab" data-view="state">State diff</button></div><div id="case-evidence" role="tabpanel" aria-labelledby="checks-tab"></div></aside></div>
+    </section>
+    <section class="methodology" id="methodology"><div><span class="eyebrow">WHAT THIS EXPERIMENT PROVES</span><h2>A test of the test system.</h2><p>The reference agent follows explicit rules. Five deliberate defects verify that the evaluator rejects incorrect behavior. These results measure this sandbox—not a language model’s real-world reliability.</p></div><div class="method-steps"><div><span>01</span><p>Start with explicit<br><b>scenario expectations</b></p></div><div><span>02</span><p>Run in isolated<br><b>database state</b></p></div><div><span>03</span><p>Inspect actions and<br><b>persisted outcomes</b></p></div></div></section>
+    <footer class="page-footer"><span>AI Agent Reliability Lab <span class="slash">/</span> Built for reproducible investigation.</span><span id="run-meta"></span></footer>
+  </main>
+</body>
+</html>
