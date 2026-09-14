@@ -158,7 +158,7 @@ docs/                   # Architecture, test strategy, demo, and validation note
 
 - [Architecture and decisions](docs/architecture.md)
 - [Test strategy and limitations](docs/test-strategy.md)
-- [Three-minute interview demo](docs/interview-demo.md)
+- [Demo walkthrough](docs/demo-walkthrough.md)
 - [Validation results](docs/validation.md)
 - [Future live-model integration](docs/live-model-roadmap.md)
 
